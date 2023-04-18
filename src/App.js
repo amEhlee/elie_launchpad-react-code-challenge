@@ -1,11 +1,16 @@
-function App() {
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import React from "react";
+import HomePage from "./pages/HomePage";
+import Navbar from "./components/Navbar";
+
+export default function App() {
   return (
-    <div className="text-center">
-      <header className="App-header">
-        <h1>Hello World</h1>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Navbar />}>
+          <Route index element={<HomePage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;
