@@ -12,7 +12,7 @@ export default function Navbar() {
       >
         <Toolbar className="flex gap-8 justify-center">
           <Link to="/">Home</Link>
-          <Link to="/postal">Postal Lookup</Link>
+          <Link to="/postallookup">Postal Lookup</Link>
           <Link to="/university">University Lookup</Link>
         </Toolbar>
       </AppBar>
