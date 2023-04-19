@@ -16,7 +16,6 @@ export default function Navbar() {
           <Link to="/University">Universities</Link>
         </Toolbar>
       </AppBar>
-
       <Outlet />
     </>
   );
