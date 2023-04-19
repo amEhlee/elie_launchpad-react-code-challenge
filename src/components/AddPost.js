@@ -16,7 +16,7 @@ export default function AddPost() {
   }
 
   return (
-    <Card className="flex flex-col justify-center items-center gap-4 p-4 text-center ">
+    <Card className="flex flex-col justify-center items-center gap-4 p-4 text-center max-w-[800px] ">
       <h1>Add Post</h1>
 
       {/* Event Project Name */}
