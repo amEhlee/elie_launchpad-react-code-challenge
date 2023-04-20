@@ -42,7 +42,6 @@ export default function EditPostModal({
         <Card className="flex flex-col justify-center items-center p-4 gap-4 min-w-[400px]">
           <h1>Edit Post</h1>
 
-          {/* Event Project Name */}
           <TextField
             className="w-9/12"
             label="Title"
@@ -53,7 +52,6 @@ export default function EditPostModal({
             InputLabelProps={{ shrink: true }}
           />
 
-          {/* Event Description */}
           <TextField
             multiline
             rows={4}
