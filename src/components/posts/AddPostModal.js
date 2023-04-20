@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Card, Modal, TextField } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
-import { addPost } from "../features/postSlice";
+import { addPost } from "../../features/postSlice";
 
 export default function AddPostModal({ showAddModal, setShowAddModal }) {
   const [title, setTitle] = useState("");

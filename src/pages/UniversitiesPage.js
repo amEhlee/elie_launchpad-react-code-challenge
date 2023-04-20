@@ -81,7 +81,7 @@ export default function UniversitiesPage() {
               <TableRow key={i.name}>
                 <TableCell align="center">{i.country}</TableCell>
                 <TableCell align="center">
-                  {i["state-province"] || " None "}
+                  {i["state-province"] || " None Given "}
                 </TableCell>
                 <TableCell align="center">{i.name}</TableCell>
               </TableRow>

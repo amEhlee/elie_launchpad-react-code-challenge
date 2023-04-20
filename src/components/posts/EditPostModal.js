@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { editPost } from "../features/postSlice";
+import { editPost } from "../../features/postSlice";
 import { Button, Card, Modal, TextField } from "@mui/material";
 import { useState } from "react";
 
@@ -24,6 +24,12 @@ export default function EditPostModal({
     dispatch(editPost(body));
     setShowEditModal(false);
   }
+
+  useEffect(() => {
+    setTitle(currentPost.title);
+    setDescription(currentPost.body)
+  }, [currentPost])
+  
 
   return (
     <Modal

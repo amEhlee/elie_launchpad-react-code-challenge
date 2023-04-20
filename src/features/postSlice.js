@@ -56,7 +56,7 @@ export const deletePost = createAsyncThunk("delete", async (id) => {
   return await axios
     .delete(url)
     .then((res) => {
-      console.log(res)
+      console.log(res);
       return id;
     })
     .catch((err) => {
@@ -79,12 +79,15 @@ const postSlice = createSlice({
       .addCase(getPosts.rejected, (state) => {
         state.loading = false;
       })
-      
+
       .addCase(addPost.pending, (state) => {
         state.loading = true;
       })
       .addCase(addPost.fulfilled, (state, action) => {
         state.entities.push(action.payload);
+        state.loading = false;
+      })
+      .addCase(addPost.rejected, (state) => {
         state.loading = false;
       })
 
@@ -101,12 +104,18 @@ const postSlice = createSlice({
         state.entities[postIndex].body = action.payload.body;
         state.loading = false;
       })
+      .addCase(editPost.rejected, (state) => {
+        state.loading = false;
+      })
 
       .addCase(deletePost.pending, (state) => {
         state.loading = true;
       })
       .addCase(deletePost.fulfilled, (state, action) => {
         state.entities = state.entities.filter((i) => i.id !== action.payload);
+        state.loading = false;
+      })
+      .addCase(deletePost.rejected, (state) => {
         state.loading = false;
       });
   },

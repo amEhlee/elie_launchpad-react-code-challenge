@@ -8,10 +8,10 @@ export default function PostalLookupPage() {
   const [data, setData] = useState([]);
 
   function handlePostalLookup() {
-    const postalLookupApi = `https://api.zippopotam.us/us/${postalCode}`;
+    const postalLookupSource = `https://api.zippopotam.us/us/${postalCode}`;
 
     axios
-      .get(postalLookupApi)
+      .get(postalLookupSource)
       .then((res) => {
         console.log(res);
         setCountry(res.data.country);
@@ -26,7 +26,10 @@ export default function PostalLookupPage() {
     <div className="flex flex-col items-center mt-20 mx-8 text-center p-4">
       <Card className="flex flex-col gap-4 mx-4 p-4  ">
         <h1 className="my-8 mx-4">Postal Code Lookup</h1>
-        <p>Warning this may only work with US postal codes</p>
+        <div>
+          <h3>Warning this may only work with US postal codes</h3>
+          <p>Try "65899", "73001" or "10004" for a few famous locations</p>
+        </div>
         <FormControl>
           <div className="flex justify-center gap-4">
             <TextField
